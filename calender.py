@@ -1,5 +1,6 @@
 from tkinter import Tk,Canvas
 from datetime import date,datetime
+from random import randint
 
 root = Tk()
 c = Canvas(root,width=800,height=800,bg='gray')
@@ -32,15 +33,16 @@ events.sort(key=lambda x:x[1]) #Sort the list in order of days to go and not by 
 today  = date.today()
 vertical_space = 100
 horzintal = 100
-colors = ['white','black','blue','purple','orange']
-for event in events:
+colors_events = ['white','black','blue','purple','orange']
+for i,event in enumerate(events):
     event_name = event[0]
     
     days_until = days_between_dates(event[1],today)
     display = f"It is {days_until} days until {event_name}"
+    color_index = i%len(colors_events)
 
-    c.create_text(horzintal,vertical_space,anchor='w',fill='orange', \
+    c.create_text(horzintal,vertical_space,anchor='w',fill=colors_events[color_index], \
                   font='Arial 28 bold' ,text=display)
     vertical_space = vertical_space + 40
-    horzintal=horzintal + 20
+    horzintal=horzintal + 10
 root.mainloop()
