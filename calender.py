@@ -42,7 +42,7 @@ for i,event in enumerate(events):
     color_index = i%len(colors_events)
 
     c.create_text(horzintal,vertical_space,anchor='w',fill=colors_events[color_index], \
-                  font='Arial 28 bold' ,text=display)
+                  font='Arial 26 bold' ,text=display)
     vertical_space = vertical_space + 40
     horzintal=horzintal + 10
 root.mainloop()
