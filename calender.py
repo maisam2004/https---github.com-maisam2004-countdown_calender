@@ -1,6 +1,6 @@
 from tkinter import Tk,Canvas
 from datetime import date,datetime
-from random import randint
+
 
 root = Tk()
 c = Canvas(root,width=800,height=800,bg='gray')
