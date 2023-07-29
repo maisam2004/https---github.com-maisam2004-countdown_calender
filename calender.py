@@ -31,13 +31,16 @@ events = get_events()
 events.sort(key=lambda x:x[1]) #Sort the list in order of days to go and not by the name of the events
 today  = date.today()
 vertical_space = 100
+horzintal = 100
+colors = ['white','black','blue','purple','orange']
 for event in events:
     event_name = event[0]
     
     days_until = days_between_dates(event[1],today)
     display = f"It is {days_until} days until {event_name}"
 
-    c.create_text(100,vertical_space,anchor='w',fill='orange', \
+    c.create_text(horzintal,vertical_space,anchor='w',fill='orange', \
                   font='Arial 28 bold' ,text=display)
     vertical_space = vertical_space + 40
+    horzintal=horzintal + 20
 root.mainloop()
