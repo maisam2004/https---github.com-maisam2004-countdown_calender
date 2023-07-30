@@ -2,6 +2,10 @@ from tkinter import Tk,simpledialog,messagebox
 
 from countryinfo import CountryInfo as cinfo
 
+print("Ask the Expert - Capital Cities of the World")
+root = Tk() #Create an empty Tkinter window
+root.withdraw() #Hide the Tkinter window.
+
 
 countries_names_dic = {"AF":"Afghanistan",
 "AX":"Aland Islands",
@@ -259,9 +263,10 @@ countries_names_dic = {"AF":"Afghanistan",
 while True:
     query_country = simpledialog.askstring('Country name',"plaese enter name of country: ")
 
-    if query_country in countries_names_dic.values():
+    if query_country.title() in countries_names_dic.values():
         result = cinfo(query_country).capital()
         messagebox.showinfo(
             'Answer', 'The capital city of {query_country} is {result}'
         )
-
+    break
+root.mainloop()
