@@ -265,10 +265,14 @@ while True:
     country_list = list(countries_names_dic.values())
     new_counries = list(map(lambda x:x.lower(),country_list)) #to convert list content to lower case 
     if query_country.title() in country_list:
-        result = cinfo(query_country).capital()
+        capital = cinfo(query_country).capital()
+        country_area = cinfo(query_country).area()
+        country = query_country.upper()
         messagebox.showinfo(
-            'Answer', 'The capital city of '+query_country + ' is : ' +result )
-        break
+            'Answer', f'The capital city of {country} is : {capital},and has area of {country_area}'
+        )
         
-    
+        break
+
+
 root.mainloop()
