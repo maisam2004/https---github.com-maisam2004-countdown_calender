@@ -19,3 +19,9 @@ def grab_events():
 
             list_e.append[current[1]]
         return list_e
+#to calculate date how many days 
+
+def subtract_dates(d1,d2):
+    between = str(d1 - d2)
+    days_number  = between.split(' ')
+    print(days_number)
