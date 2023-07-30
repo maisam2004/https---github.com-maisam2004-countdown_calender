@@ -12,7 +12,7 @@ c.create_text(100,50,anchor='w',fill='blue', font='Arial 28 bold underline' ,tex
 
 def get_events():
     list_events = []
-    name_events = []
+    
     with open('events.txt','r') as file:
         for line in file:
             line = line.rstrip('\n')
