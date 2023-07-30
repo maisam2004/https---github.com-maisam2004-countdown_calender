@@ -255,3 +255,13 @@ countries_names_dic = {"AF":"Afghanistan",
 #print(cinfo('Iran').area())
 #print(cinfo('iran').capital())
 #print(cinfo('iran').borders())
+
+while True:
+    query_country = simpledialog.askstring('Country name',"plaese enter name of country: ")
+
+    if query_country in countries_names_dic.values():
+        result = cinfo(query_country).capital()
+        messagebox.showinfo(
+            'Answer', 'The capital city of {query_country} is {result}'
+        )
+
