@@ -262,11 +262,13 @@ countries_names_dic = {"AF":"Afghanistan",
 
 while True:
     query_country = simpledialog.askstring('Country name',"plaese enter name of country: ")
-
-    if query_country.title() in countries_names_dic.values():
+    country_list = list(countries_names_dic.values())
+    new_counries = list(map(lambda x:x.lower(),country_list)) #to convert list content to lower case 
+    if query_country.title() in country_list:
         result = cinfo(query_country).capital()
         messagebox.showinfo(
-            'Answer', 'The capital city of {query_country} is {result}'
-        )
-    break
+            'Answer', 'The capital city of '+query_country + ' is : ' +result )
+        break
+        
+    
 root.mainloop()
