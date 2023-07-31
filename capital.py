@@ -111,7 +111,7 @@ countries_names_dic = {"AF":"Afghanistan",
 "IS":"Iceland",
 "IN":"India",
 "ID":"Indonesia",
-"IR":"Iran, Islamic Republic of",
+"IR":"Iran",
 "IQ":"Iraq",
 "IE":"Ireland",
 "IM":"Isle of Man",
@@ -266,16 +266,24 @@ new_counries = list(map(lambda x:x.lower(),country_list)) #to convert list conte
 while True:
     query_country = simpledialog.askstring('Country name',"plaese enter name of country: ")
     
-    
+    if query_country is None: #handle user clicks Cancel or provides no input
+        break
+
+
     if query_country.title() in country_list:
         capital = cinfo(query_country).capital()
         country_area = cinfo(query_country).area()
         country = query_country.upper()
         messagebox.showinfo(
-            'Answer', f'The capital city of {country} is : {capital},and has area of {country_area}'
+            'Capital and Area Information',
+        f'The capital city of {country} is: {capital}, and it has an area of {country_area} square kilometers.'
         )
         
         break
-
+    else:
+        messagebox.showerror(
+            'Error',
+            f'Sorry, "{query_country}" is not a valid country name. Please enter a valid country name.'
+        )
 
 root.mainloop()
