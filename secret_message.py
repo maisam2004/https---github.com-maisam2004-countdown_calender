@@ -3,7 +3,7 @@ from tkinter import Tk,messagebox,simpledialog
 def get_task():
     while True:#validate entered input
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
-        if task and task.lower() in ['encrypt', 'decrypt']:
+        if task or task.lower() in ['encrypt', 'decrypt']:
             return task.lower()
         messagebox.showerror('Invalid Input', 'Please enter "encrypt" or "decrypt".')
 
@@ -19,11 +19,11 @@ def is_even(num):
 
 def get_even_ltters(message): #produces a list containing all the even-numbered letters.
     return [message[counter] for counter in range(len(message)) if is_even(counter)]
-    even_letters = []
+""" even_letters = []
     for counter in range(len(message)):
         if is_even(counter):
             even_letters.append(message[counter])
-    return even_letters
+    return even_letters"""
 def get_odd_ltters(message): #produces a list containing all the even-numbered letters.
     odd_letters = []
     for counter in range(len(message)):
