@@ -7,6 +7,7 @@ def get_message():
     return simpledialog.askstring('Message',"Enter the secret message: ")
 
 root = Tk()
+root.withdraw()
 
 
 def is_even(num):
