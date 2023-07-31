@@ -43,7 +43,7 @@ while True:
     if task == 'encrypt':
         message =get_message()
         encrypted = swap_letters(message)
-        #messagebox.showinfo('Message to encrypt is : ',message)
+        
         messagebox.showinfo('Ciphertext of the secret message is : ',encrypted)
     elif task == 'decrypt':
         message = get_message()
