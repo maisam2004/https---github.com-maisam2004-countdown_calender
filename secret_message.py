@@ -24,6 +24,20 @@ def get_odd_ltters(message): #produces a list containing all the even-numbered l
         if not is_even(counter):
             odd_letters.append(message[counter])
     return odd_letters
+
+def swap_letters(message):
+    letter_list = []
+    if not is_even(len(message)):
+        message = f'{message}x'
+    even_letters = get_even_ltters(message)
+    odd_letters  = get_odd_ltters(message) 
+
+    for counter in range(len(message) // 2):#: This calculates the integer division of the length of the message string by 2.
+        letter_list.extend((odd_letters[counter], even_letters[counter]))
+
+    new_message =''.join(letter_list)
+    return new_message
+
 while True:
     task = get_task()
 
