@@ -33,7 +33,7 @@ def get_odd_letters(message): #produces a list containing all the even-numbered 
 
 def swap_letters(message):  # sourcery skip: merge-list-appends-into-extend
     letter_list = []
-    check_letter_list = []
+    
     if not is_even(len(message)):
         message = f'{message}x'
     even_letters = get_even_letters(message)
@@ -41,8 +41,7 @@ def swap_letters(message):  # sourcery skip: merge-list-appends-into-extend
 
     for counter in range(len(message) // 2):#: This calculates the integer division of the length of the message string by 2.
         letter_list.extend((odd_letters[counter], even_letters[counter]))
-        check_letter_list.append(odd_letters[counter])
-        check_letter_list.append(even_letters[counter])
+        
     new_message =''.join(letter_list)
     return new_message
 
