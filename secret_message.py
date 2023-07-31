@@ -17,27 +17,27 @@ root.withdraw()
 def is_even(num):
     return num % 2 == 0  #True or false message will come
 
-def get_even_ltters(message): #produces a list containing all the even-numbered letters.
+def get_even_letters(message): #produces a list containing all the even-numbered letters.
     return [message[counter] for counter in range(len(message)) if is_even(counter)]
 """ even_letters = []
     for counter in range(len(message)):
         if is_even(counter):
             even_letters.append(message[counter])
     return even_letters"""
-def get_odd_ltters(message): #produces a list containing all the even-numbered letters.
-    odd_letters = []
-    for counter in range(len(message)):
+def get_odd_letters(message): #produces a list containing all the even-numbered letters.
+    return [message[counter] for counter in range(len(message)) if not is_even(counter)]
+    """ for counter in range(len(message)):
         if not is_even(counter):
             odd_letters.append(message[counter])
-    return odd_letters
+    return odd_letters """
 
 def swap_letters(message):  # sourcery skip: merge-list-appends-into-extend
     letter_list = []
     check_letter_list = []
     if not is_even(len(message)):
         message = f'{message}x'
-    even_letters = get_even_ltters(message)
-    odd_letters  = get_odd_ltters(message) 
+    even_letters = get_even_letters(message)
+    odd_letters  = get_odd_letters(message) 
 
     for counter in range(len(message) // 2):#: This calculates the integer division of the length of the message string by 2.
         letter_list.extend((odd_letters[counter], even_letters[counter]))
