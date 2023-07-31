@@ -19,17 +19,10 @@ def is_even(num):
 
 def get_even_letters(message): #produces a list containing all the even-numbered letters.
     return [message[counter] for counter in range(len(message)) if is_even(counter)]
-""" even_letters = []
-    for counter in range(len(message)):
-        if is_even(counter):
-            even_letters.append(message[counter])
-    return even_letters"""
+
 def get_odd_letters(message): #produces a list containing all the even-numbered letters.
     return [message[counter] for counter in range(len(message)) if not is_even(counter)]
-    """ for counter in range(len(message)):
-        if not is_even(counter):
-            odd_letters.append(message[counter])
-    return odd_letters """
+
 
 def swap_letters(message):  # sourcery skip: merge-list-appends-into-extend
     letter_list = []
