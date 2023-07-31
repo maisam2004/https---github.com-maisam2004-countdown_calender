@@ -255,6 +255,9 @@ countries_names_dic = {"AF":"Afghanistan",
 "YE":"Yemen",
 "ZM":"Zambia",
 "ZW":"Zimbabwe"}
+country_list = list(countries_names_dic.values()) #make list of countries_names
+new_counries = list(map(lambda x:x.lower(),country_list)) #to convert list content to lower case 
+
 #country = input("enter country name : ")
 #print(cinfo('Iran').area())
 #print(cinfo('iran').capital())
@@ -262,8 +265,8 @@ countries_names_dic = {"AF":"Afghanistan",
 
 while True:
     query_country = simpledialog.askstring('Country name',"plaese enter name of country: ")
-    country_list = list(countries_names_dic.values())
-    new_counries = list(map(lambda x:x.lower(),country_list)) #to convert list content to lower case 
+    
+    
     if query_country.title() in country_list:
         capital = cinfo(query_country).capital()
         country_area = cinfo(query_country).area()
