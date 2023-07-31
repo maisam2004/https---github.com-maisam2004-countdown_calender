@@ -18,6 +18,7 @@ def is_even(num):
     return num % 2 == 0  #True or false message will come
 
 def get_even_ltters(message): #produces a list containing all the even-numbered letters.
+    return [message[counter] for counter in range(len(message)) if is_even(counter)]
     even_letters = []
     for counter in range(len(message)):
         if is_even(counter):
