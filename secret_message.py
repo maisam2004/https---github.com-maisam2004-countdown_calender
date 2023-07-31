@@ -8,6 +8,11 @@ def get_message():
 
 root = Tk
 
+
+def is_even(num)
+    return num % 2 == 0  #True or false message will come
+    
+
 while True:
     task = get_task()
 
