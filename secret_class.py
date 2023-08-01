@@ -29,13 +29,13 @@ class Secret_message:
 
         return ''.join(letter_list)
     
-    def get_message():
+    def get_message(self):
         return simpledialog.askstring('Message',"Enter the secret message: ")
 
 
     def output(self):
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
-        message = self.get_message
+        message = self.get_message()
         
         if task =='encrypt':
             #message = simpledialog.askstring('Message',"Enter the secret message: ")
