@@ -44,13 +44,15 @@ while True:
     if task == 'encrypt':
         message =get_message()
         encrypted = swap_letters(message)
-        
+
         messagebox.showinfo('Ciphertext of the secret message is : ',encrypted)
     elif task == 'decrypt':
         message = get_message()
         decrypted = swap_letters(message)
-        
+
         messagebox.showinfo('Plaintext of the secret message is: ',decrypted)
     else:
-        break
+        messagebox.showinfo('Invalid Input', 'Invalid task. The task should be "encrypt" or "decrypt".')
+        continue
+    exit()
 root.mainloop()
