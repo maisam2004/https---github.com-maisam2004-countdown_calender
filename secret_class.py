@@ -35,10 +35,9 @@ class Secret_message:
 
     def output(self):
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
-        
-        
+
+
         if task.lower() =='encrypt':
-            #message = simpledialog.askstring('Message',"Enter the secret message: ")
             message = self.get_message()
             encrypted = self.swap_letters(message)
             messagebox.showinfo('Ciphertext of the secret message is : ',encrypted)
@@ -48,8 +47,9 @@ class Secret_message:
             decrypted = self.swap_letters(message)
             messagebox.showinfo('Plaintext',f'the secret message was: {decrypted}')
         else:
-            messagebox.showinfo('Invalid Input', 'Invalid task. The task should be "encrypt" or "decrypt".')
-            exit() 
+            messagebox.showinfo('Invalid Input', 'Invalid task. The task should be "encrypt" or "decrypt".') 
+
+        exit() 
 secret_msg = Secret_message()
 # Call the output method of the class instance
 secret_msg.output()
