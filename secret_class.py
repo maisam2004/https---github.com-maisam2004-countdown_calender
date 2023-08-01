@@ -37,17 +37,17 @@ class Secret_message:
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
         message = self.get_message()
         
-        if task =='encrypt':
+        if task.lower() =='encrypt':
             #message = simpledialog.askstring('Message',"Enter the secret message: ")
             
             encrypted = self.swap_letters(message)
             messagebox.showinfo('Ciphertext of the secret message is : ',encrypted)
-        elif task == "Decrypt":
+        elif task.lower() == "decrypt":
             #message = simpledialog.askstring('Message',"Enter the secret message: ")
             
             decrypted = self.swap_letters(message)
             messagebox.showinfo('Plaintext of the secret message is: ',decrypted)
 
-    ROOT.mainloop()
+Secret_message.ROOT.mainloop()
 
 
