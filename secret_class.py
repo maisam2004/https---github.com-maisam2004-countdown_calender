@@ -3,10 +3,7 @@ from tkinter import Tk,simpledialog,messagebox
 class Secret_message:
     ROOT = Tk()
     ROOT.withdraw()
-    """ def __init__(self):
-        self.message = simpledialog.askstring('Message',"Enter the secret message: ")
-        self.task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
- """
+
     def is_even(self,num):
         return num % 2 == 0
 
