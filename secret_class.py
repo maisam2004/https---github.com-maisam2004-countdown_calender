@@ -46,8 +46,18 @@ class Secret_message:
             #message = simpledialog.askstring('Message',"Enter the secret message: ")
             
             decrypted = self.swap_letters(message)
-            messagebox.showinfo('Plaintext of the secret message is: ',decrypted)
+            messagebox.showinfo('Plaintext',f'the secret message was: {decrypted}')
+        else:
+            messagebox.showinfo('Invalid Input', 'Invalid task. The task should be "encrypt" or "decrypt".')
+            exit() 
+secret_msg = Secret_message()
+# Call the output method of the class instance
+secret_msg.output()
 
+# Start the Tkinter main event loop
 Secret_message.ROOT.mainloop()
+
+
+
 
 

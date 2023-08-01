@@ -3,6 +3,7 @@ from tkinter import Tk,messagebox,simpledialog
 def get_task():
     while True:#validate entered input
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
+        
         if task or task.lower() in ['encrypt', 'decrypt']:
             return task.lower()
         messagebox.showerror('Invalid Input', 'Please enter "encrypt" or "decrypt".')
