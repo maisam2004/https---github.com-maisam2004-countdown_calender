@@ -35,16 +35,16 @@ class Secret_message:
 
     def output(self):
         task = simpledialog.askstring('Encrypt or Decrypt', 'Do you want to encrypt or decrypt?')
-        message = self.get_message()
+        
         
         if task.lower() =='encrypt':
             #message = simpledialog.askstring('Message',"Enter the secret message: ")
-            
+            message = self.get_message()
             encrypted = self.swap_letters(message)
             messagebox.showinfo('Ciphertext of the secret message is : ',encrypted)
         elif task.lower() == "decrypt":
-            #message = simpledialog.askstring('Message',"Enter the secret message: ")
             
+            message = self.get_message()
             decrypted = self.swap_letters(message)
             messagebox.showinfo('Plaintext',f'the secret message was: {decrypted}')
         else:
